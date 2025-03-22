@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb Toggle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: aliceblue;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-decoration: solid;
+            margin-bottom: 20px;
+        }
+
+        #bulb {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px 2px #ccc;
+            transition: background-color 0.5s, box-shadow 0.5s;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff6f61;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff3b28;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bulb"></div>
+    <h1 id="status">Light</h1>
+    <div>
+        <button onclick="turnOn()">Turn On</button>
+        <button onclick="turnOff()">Turn Off</button>
+    </div>
+
+    <script>
+        function turnOn() {
+            const bulb = document.getElementById("bulb");
+            bulb.style.backgroundColor = "tomato";
+            bulb.style.boxShadow = "0 0 150px 20px tomato";
+            document.getElementById("status").innerHTML = "Light Turned On";
+        }
+
+        function turnOff() {
+            const bulb = document.getElementById("bulb");
+            bulb.style.backgroundColor = "white";
+            bulb.style.boxShadow = "0 0 10px 2px #ccc";
+            document.getElementById("status").innerHTML = "Light Turned Off";
+        }
+    </script>
+</body>
+
+</html>

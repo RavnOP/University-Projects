@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word & Character Counter</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            font-family: "Arial", sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        input {
+            width: 90%;
+            height: 40px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6f61;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #ff3b28;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #word-count, #char-count {
+            font-weight: bold;
+            color: #ffdd57;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Word & Character Counter</h1>
+        <input type="text" id="text-input" placeholder="Type something here...">
+        <button onclick="calculateCounts()">Calculate</button>
+        <h2>Number of Words: <span id="word-count">0</span></h2>
+        <h2>Number of Characters: <span id="char-count">0</span></h2>
+    </div>
+
+    <script>
+        function calculateCounts() {
+            const inputText = document.getElementById("text-input").value.trim();
+            const wordCount = inputText ? inputText.split(/\s+/).length : 0;
+            const charCount = inputText.length;
+            document.getElementById("word-count").textContent = wordCount;
+            document.getElementById("char-count").textContent = charCount;
+        }
+    </script>
+</body>
+
+</html>
